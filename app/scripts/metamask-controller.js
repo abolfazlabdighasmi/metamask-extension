@@ -750,6 +750,12 @@ export default class MetamaskController extends EventEmitter {
       this.metaMetricsController.handleMetaMaskStateUpdate(update);
     });
 
+    this.metaMetricsDataDeletionController =
+      new MetaMetricsDataDeletionController({
+        initState: initState.metaMetricsDataDeletionController,
+        metaMetricsController: this.metaMetricsController,
+      });
+
     const gasFeeMessenger = this.controllerMessenger.getRestricted({
       name: 'GasFeeController',
       allowedActions: [
@@ -2255,6 +2261,8 @@ export default class MetamaskController extends EventEmitter {
       KeyringController: this.keyringController,
       PreferencesController: this.preferencesController.store,
       MetaMetricsController: this.metaMetricsController.store,
+      MetaMetricsDataDeletionController:
+        this.metaMetricsDataDeletionController.store,
       AddressBookController: this.addressBookController,
       CurrencyController: this.currencyRateController,
       NetworkController: this.networkController,
@@ -2309,6 +2317,8 @@ export default class MetamaskController extends EventEmitter {
         KeyringController: this.keyringController,
         PreferencesController: this.preferencesController.store,
         MetaMetricsController: this.metaMetricsController.store,
+        MetaMetricsDataDeletionController:
+          this.metaMetricsDataDeletionController.store,
         AddressBookController: this.addressBookController,
         CurrencyController: this.currencyRateController,
         AlertController: this.alertController.store,
@@ -5527,6 +5537,15 @@ export default class MetamaskController extends EventEmitter {
         sendMetrics: this.metaMetricsController.trackEvent.bind(
           this.metaMetricsController,
         ),
+        // metrics data deleteion
+        createMetaMetricsDataDeletionTask:
+          this.metaMetricsDataDeletionController.createMetaMetricsDataDeletionTask.bind(
+            this.metaMetricsDataDeletionController,
+          ),
+        checkDataDeletionTaskStatus:
+          this.metaMetricsDataDeletionController.checkDataDeletionTaskStatus.bind(
+            this.metaMetricsDataDeletionController,
+          ),
         // Permission-related
         getAccounts: this.getPermittedAccounts.bind(this, origin),
         getPermissionsForOrigin: this.permissionController.getPermissions.bind(
