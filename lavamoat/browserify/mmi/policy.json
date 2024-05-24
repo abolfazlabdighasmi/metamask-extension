@@ -980,7 +980,6 @@
         "@metamask/assets-controllers>@metamask/controller-utils": true,
         "@metamask/assets-controllers>@metamask/polling-controller": true,
         "@metamask/assets-controllers>@metamask/utils": true,
-        "@metamask/assets-controllers>cockatiel": true,
         "@metamask/assets-controllers>multiformats": true,
         "@metamask/contract-metadata": true,
         "@metamask/eth-query": true,
@@ -988,6 +987,7 @@
         "@metamask/name-controller>async-mutex": true,
         "@metamask/rpc-errors": true,
         "bn.js": true,
+        "cockatiel": true,
         "lodash": true,
         "single-call-balance-checker-abi": true,
         "uuid": true
@@ -1044,19 +1044,6 @@
         "browserify>buffer": true,
         "nock>debug": true,
         "semver": true
-      }
-    },
-    "@metamask/assets-controllers>cockatiel": {
-      "globals": {
-        "AbortController": true,
-        "AbortSignal": true,
-        "WeakRef": true,
-        "clearTimeout": true,
-        "performance": true,
-        "setTimeout": true
-      },
-      "packages": {
-        "process": true
       }
     },
     "@metamask/assets-controllers>multiformats": {
@@ -4379,6 +4366,19 @@
       "globals": {
         "classNames": "write",
         "define": true
+      }
+    },
+    "cockatiel": {
+      "globals": {
+        "AbortController": true,
+        "AbortSignal": true,
+        "WeakRef": true,
+        "clearTimeout": true,
+        "performance": true,
+        "setTimeout": true
+      },
+      "packages": {
+        "browserify>process": true
       }
     },
     "copy-to-clipboard": {
