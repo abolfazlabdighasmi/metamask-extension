@@ -2582,8 +2582,6 @@ describe('Actions', () => {
     });
 
     it('calls createMetaMetricsDataDeletionTask in background', async () => {
-      const store = mockStore();
-
       const createMetaMetricsDataDeletionTaskStub = sinon
         .stub()
         .callsFake((cb) => cb());
@@ -2594,7 +2592,7 @@ describe('Actions', () => {
 
       setBackgroundConnection(background.getApi());
 
-      await store.dispatch(actions.createMetaMetricsDataDeletionTask());
+      await actions.createMetaMetricsDataDeletionTask();
       expect(createMetaMetricsDataDeletionTaskStub.callCount).toStrictEqual(1);
     });
   });
@@ -2604,8 +2602,6 @@ describe('Actions', () => {
     });
 
     it('calls updateDataDeletionTaskStatus in background', async () => {
-      const store = mockStore();
-
       const updateDataDeletionTaskStatusStub = sinon
         .stub()
         .callsFake((cb) => cb());
@@ -2615,7 +2611,7 @@ describe('Actions', () => {
 
       setBackgroundConnection(background.getApi());
 
-      await store.dispatch(actions.updateDataDeletionTaskStatus());
+      await actions.updateDataDeletionTaskStatus();
       expect(updateDataDeletionTaskStatusStub.callCount).toStrictEqual(1);
     });
   });
