@@ -4286,7 +4286,7 @@
         "setTimeout": true
       },
       "packages": {
-        "browserify>process": true
+        "process": true
       }
     },
     "copy-to-clipboard": {
