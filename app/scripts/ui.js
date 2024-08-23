@@ -10,7 +10,7 @@ import 'react-devtools';
 
 import PortStream from 'extension-port-stream';
 import browser from 'webextension-polyfill';
-
+import * as Sentry from '@sentry/browser';
 import Eth from '@metamask/ethjs';
 import EthQuery from '@metamask/eth-query';
 import StreamProvider from 'web3-stream-provider';
@@ -244,6 +244,12 @@ async function start() {
       if (process.env.IN_TEST) {
         window.document?.documentElement?.classList.add('controller-loaded');
       }
+
+      Sentry.setMeasurement(
+        'ui.initialized',
+        performance.now(),
+        'milliseconds',
+      );
 
       const state = store.getState();
       const { metamask: { completedOnboarding } = {} } = state;
