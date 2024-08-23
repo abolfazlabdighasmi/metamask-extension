@@ -30,7 +30,7 @@ const render = () => {
         options: {},
         methods: [],
         name: 'Custody Account A',
-        balance: 'mockBalance',
+        balance: '0x1',
         keyring: { type: 'Custody' },
       },
     ],
