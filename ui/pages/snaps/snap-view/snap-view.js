@@ -108,7 +108,7 @@ function SnapView() {
           }
         ></SnapAuthorshipHeader>
         <Content
-          backgroundColor={BackgroundColor.backgroundDefault}
+          backgroundColor={BackgroundColor.backgroundAlternative}
           className="snap-view__content"
           marginTop={showSettings ? 4 : 0}
           padding={showSettings ? 4 : 0}

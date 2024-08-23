@@ -14,6 +14,7 @@ import { SnapInterfaceContextProvider } from '../../../../contexts/snaps';
 import PulseLoader from '../../../ui/pulse-loader';
 import {
   AlignItems,
+  BackgroundColor,
   BlockSize,
   Display,
   JustifyContent,

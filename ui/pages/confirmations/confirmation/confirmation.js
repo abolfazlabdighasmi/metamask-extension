@@ -500,15 +500,18 @@ export default function ConfirmationPage({
           </button>
         </div>
       )}
-      <div className="confirmation-page__content">
-        {isSnapCustomUIDialog && (
-          <Box width={BlockSize.Screen}>
-            <SnapAuthorshipHeader
-              snapId={pendingConfirmation?.origin}
-              onCancel={handleSnapDialogCancel}
-            />
-          </Box>
-        )}
+      {isSnapCustomUIDialog && (
+        <Box width={BlockSize.Screen} style={{ position: 'fixed', zIndex: 1 }}>
+          <SnapAuthorshipHeader
+            snapId={pendingConfirmation?.origin}
+            onCancel={handleSnapDialogCancel}
+          />
+        </Box>
+      )}
+      <div
+        className="confirmation-page__content"
+        style={{ paddingTop: isSnapCustomUIDialog ? '64px' : 'initial' }}
+      >
         {templatedValues.networkDisplay ? (
           <Box justifyContent="center" marginTop={2}>
             <NetworkDisplay />

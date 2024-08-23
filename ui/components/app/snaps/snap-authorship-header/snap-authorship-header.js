@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { stripSnapPrefix } from '@metamask/snaps-utils';
 import { useSelector } from 'react-redux';
 import {
   BackgroundColor,
@@ -25,9 +24,9 @@ import {
   ButtonIconSize,
   ButtonIcon,
 } from '../../../component-library';
-import SnapAvatar from '../snap-avatar';
 import { SnapMetadataModal } from '../snap-metadata-modal';
 import { useI18nContext } from '../../../../hooks/useI18nContext';
+import { SnapIcon } from '../snap-icon';
 
 const SnapAuthorshipHeader = ({
   snapId,
@@ -40,11 +39,6 @@ const SnapAuthorshipHeader = ({
 }) => {
   const t = useI18nContext();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  // We're using optional chaining with snapId, because with the current implementation
-  // of snap update in the snap controller, we do not have reference to snapId when an
-  // update request is rejected because the reference comes from the request itself and not subject metadata
-  // like it is done with snap install
-  const packageName = snapId && stripSnapPrefix(snapId);
 
   const { name: snapName } = useSelector((state) =>
     getSnapMetadata(state, snapId),
@@ -57,13 +51,15 @@ const SnapAuthorshipHeader = ({
   return (
     <Box
       className={classnames('snaps-authorship-header', className)}
-      backgroundColor={BackgroundColor.backgroundAlternative}
+      backgroundColor={BackgroundColor.backgroundDefault}
       width={BlockSize.Full}
       alignItems={AlignItems.center}
       display={Display.Flex}
       padding={4}
       style={{
         boxShadow,
+        minHeight: '64px',
+        zIndex: 1,
       }}
     >
       {snapId && (
@@ -96,11 +92,7 @@ const SnapAuthorshipHeader = ({
           justifyContent={JustifyContent.center}
           alignItems={AlignItems.center}
         >
-          <SnapAvatar
-            snapId={snapId}
-            avatarSize={IconSize.Sm}
-            badgeSize={IconSize.Xs}
-          />
+          <SnapIcon snapId={snapId} avatarSize={IconSize.Sm} />
           <Text
             color={TextColor.textDefault}
             variant={TextVariant.bodyMdMedium}
@@ -115,15 +107,7 @@ const SnapAuthorshipHeader = ({
           justifyContent={JustifyContent.center}
           alignItems={AlignItems.center}
           paddingTop={1}
-        >
-          <Text
-            ellipsis
-            variant={TextVariant.bodySm}
-            color={TextColor.textAlternative}
-          >
-            {packageName}
-          </Text>
-        </Box>
+        ></Box>
       </Box>
       {showInfo && (
         <Box marginLeft="auto">

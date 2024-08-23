@@ -32,7 +32,6 @@ import {
   TextAlign,
   TextVariant,
 } from '../../../../helpers/constants/design-system';
-import SnapAvatar from '../snap-avatar';
 import { formatDate } from '../../../../helpers/utils/util';
 import { useI18nContext } from '../../../../hooks/useI18nContext';
 import { useOriginMetadata } from '../../../../hooks/useOriginMetadata';
@@ -40,6 +39,7 @@ import { ShowMore } from '../show-more';
 import SnapExternalPill from '../snap-version/snap-external-pill';
 import { useSafeWebsite } from '../../../../hooks/snaps/useSafeWebsite';
 import Tooltip from '../../../ui/tooltip';
+import { SnapIcon } from '../snap-icon';
 
 export const SnapMetadataModal = ({ snapId, isOpen, onClose }) => {
   const t = useI18nContext();
@@ -99,7 +99,7 @@ export const SnapMetadataModal = ({ snapId, isOpen, onClose }) => {
           }}
         >
           <Box>
-            <SnapAvatar snapId={snapId} />
+            <SnapIcon snapId={snapId} />
           </Box>
           <Text variant={TextVariant.bodyMdMedium} textAlign={TextAlign.Center}>
             {snapName}
