@@ -60,7 +60,7 @@ describe('useMultichainSelector', () => {
   });
 
   it('uses selectedAccount if account is not provided', () => {
-    const { result } = renderUseMultichainHook(getMultichainIsEvm, null);
+    const { result } = renderUseMultichainHook(getMultichainIsEvm, undefined);
 
     expect(result.current).toBe(true);
   });

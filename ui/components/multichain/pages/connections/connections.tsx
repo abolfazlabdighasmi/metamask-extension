@@ -252,7 +252,9 @@ export const Connections = () => {
               const isSelectedAccount =
                 selectedAccount.address === account.address;
               // Match the index of latestSelected Account with the index of all the accounts and set the active status
-              let mergedAccountsProps;
+              let mergedAccountsProps: AccountType & {
+                isAccountActive?: boolean;
+              };
               if (index === latestSelected) {
                 mergedAccountsProps = { ...account, isAccountActive: true };
               } else {

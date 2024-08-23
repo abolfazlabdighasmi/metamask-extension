@@ -115,8 +115,12 @@ describe('PermissionDetailsModal', () => {
         keyring: {
           type: 'HD Key Tree',
         },
+        importTime: Date.now(),
       },
+      type: 'eip155:eoa' as const,
       label: '',
+      options: {},
+      methods: [],
     },
     isOpen: true,
     permissions: [
