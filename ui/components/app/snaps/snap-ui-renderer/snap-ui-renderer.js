@@ -14,6 +14,7 @@ import { SnapInterfaceContextProvider } from '../../../../contexts/snaps';
 import PulseLoader from '../../../ui/pulse-loader';
 import {
   AlignItems,
+  BackgroundColor,
   BlockSize,
   Display,
   JustifyContent,
@@ -126,7 +127,11 @@ const SnapUIRendererComponent = ({
       initialState={initialState}
       context={context}
     >
-      <Box className="snap-ui-renderer__content" height={BlockSize.Full}>
+      <Box
+        className="snap-ui-renderer__content"
+        height={BlockSize.Full}
+        backgroundColor={BackgroundColor.backgroundAlternative}
+      >
         <MetaMaskTemplateRenderer sections={sections} />
       </Box>
     </SnapInterfaceContextProvider>
