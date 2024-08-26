@@ -25,7 +25,7 @@ exports[`remove-snap-account confirmation should match snapshot 1`] = `
             />
           </button>
           <div
-            class="mm-box mm-box--margin-right-4 mm-box--margin-left-4 mm-box--display-flex mm-box--flex-direction-column mm-box--width-full"
+            class="mm-box mm-box--margin-right-4 mm-box--margin-left-4 mm-box--display-flex mm-box--justify-content-center mm-box--align-items-center mm-box--width-full"
             style="overflow: hidden;"
           >
             <div

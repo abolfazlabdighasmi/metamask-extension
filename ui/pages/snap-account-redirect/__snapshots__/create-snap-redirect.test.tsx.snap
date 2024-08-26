@@ -10,7 +10,7 @@ exports[`<SnapAccountRedirect /> renders the url and message when provided and i
       style="box-shadow: var(--shadow-size-md) var(--color-shadow-default); min-height: 64px; z-index: 1;"
     >
       <div
-        class="mm-box mm-box--margin-right-4 mm-box--margin-left-4 mm-box--display-flex mm-box--flex-direction-column mm-box--width-full"
+        class="mm-box mm-box--margin-right-4 mm-box--margin-left-4 mm-box--display-flex mm-box--justify-content-center mm-box--align-items-center mm-box--width-full"
         style="overflow: hidden;"
       >
         <div
