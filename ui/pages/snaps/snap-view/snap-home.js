@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 import { SnapHomeRenderer } from '../../../components/app/snaps/snap-home-page/snap-home-renderer';
 import { Box } from '../../../components/component-library';
-import { BlockSize } from '../../../helpers/constants/design-system';
+import { BackgroundColor } from '../../../helpers/constants/design-system';
 
 function SnapHome({ snapId }) {
   return (
-    <Box height={BlockSize.Full}>
+    <Box backgroundColor={BackgroundColor.backgroundDefault}>
       <SnapHomeRenderer snapId={snapId} />
     </Box>
   );

@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 import {
   BackgroundColor,
   TextColor,
-  FlexDirection,
   TextVariant,
   AlignItems,
   Display,
@@ -83,7 +82,8 @@ const SnapAuthorshipHeader = ({
         marginLeft={4}
         marginRight={4}
         display={Display.Flex}
-        flexDirection={FlexDirection.Column}
+        justifyContent={JustifyContent.center}
+        alignItems={AlignItems.center}
         style={{ overflow: 'hidden' }}
         width={BlockSize.Full}
       >
